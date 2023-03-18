@@ -13,14 +13,9 @@ let date = '';
 let motd = '';
 
 const server = app.listen(4000, async () => {
-    const host = server.address().address;
-    const port = server.address().port
-    console.log(`MOTD started. Listening at http://${host}:${port}`);
-
     if (!fs.existsSync(fileName)) {
         fs.writeFileSync(fileName, "[]");
     }
-
     await getMotd();
 });
 
