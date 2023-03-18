@@ -1,0 +1,26 @@
+{
+  "name": "motd.bluevista.dev",
+  "version": "1.0.0",
+  "description": "AI powered motd.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanejohnsons/motd.bluevista.dev.git"
+  },
+  "author": "Ethan Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ethanejohnsons/motd.bluevista.dev/issues"
+  },
+  "homepage": "https://motd.bluevista.dev",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "openai": "^3.2.1"
+  }
+}
