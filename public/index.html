@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>AI-Powered Poetry</title>
+</head>
+<style>
+    body {
+        /* Vertle Color */
+        background-color: #fdfff5;
+    }
+    .text {
+        /* Alignment */
+        padding-top: 10px;
+        text-align: center;
+
+        /* Font */
+        font-size: 20px;
+        font-family: -apple-system, BlinkMacSystemFont,
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    hr {
+        width: 20rem;
+        height: 1px;
+        border: none;
+        background-color: #222222;
+    }
+</style>
+
+<body>
+    <div class = "text">
+        <p id="date"></p>
+        <hr>
+        <p id="motd"></p>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', event => {
+        fetch('http://localhost:4000/motd')
+            .then(result => result.json())
+            .then(json => {
+                document.getElementById("date").innerText = json.date;
+
+                let motd = json.motd.split('');
+                let element = document.getElementById("motd");
+                let running = null;
+                const animate = () => {
+                    let next = motd.shift();
+                    if (next === '\n') next = "<br />";
+                    next ? element.innerHTML += next : clearTimeout(running);
+                    running = setTimeout(animate, next === "<br />" ? 250 : 80);
+                }
+                animate();
+            })
+            .catch(console.error);
+    });
+</script>
+</html>
