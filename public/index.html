@@ -1,44 +1,32 @@
 <html>
 <head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="MOTD" content="OpenAI message of the day generator. Visit each day for a new poem." />
     <title>AI-Powered Poetry</title>
 </head>
-<style>
-    body {
-        /* Vertle Color */
-        background-color: #fdfff5;
-    }
-    .text {
-        /* Alignment */
-        padding-top: 10px;
-        text-align: center;
-
-        /* Font */
-        font-size: 20px;
-        font-family: -apple-system, BlinkMacSystemFont,
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    hr {
-        width: 20rem;
-        height: 1px;
-        border: none;
-        background-color: #222222;
-    }
-</style>
 
 <body>
-    <div class = "text">
+    <div class="text">
         <p id="date"></p>
         <hr>
         <p id="motd"></p>
+    </div>
+    <div class="footer">
+        <a href="https://www.buymeacoffee.com/EthanJohnson">
+            <img src="icons/bmc.svg" alt="Buy Me a Coffee" width="50px" height="50px"/>
+        </a>
+        <a href="https://github.com/ethanejohnsons/motd.bluevista.dev">
+            <img src="icons/github.svg" alt="Github" width="50px" height="50px"/>
+        </a>
     </div>
 </body>
 
 <script>
     document.addEventListener('DOMContentLoaded', event => {
-        fetch('https://motd.bluevista.dev/motd')
+        fetch('http://localhost:4000/motd')
             .then(result => result.json())
             .then(json => {
                 document.getElementById("date").innerText = json.date;
