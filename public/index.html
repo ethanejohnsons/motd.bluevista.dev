@@ -27,7 +27,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', event => {
-        fetch('https://motd.bluevista.dev/motd')
+        fetch('http://localhost:4000/motd')
             .then(result => result.json())
             .then(json => {
                 document.getElementById("date").innerText = json.date;

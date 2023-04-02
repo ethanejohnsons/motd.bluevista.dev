@@ -53,7 +53,7 @@ const getMotd = async () => {
         { role: "system", content: `You are a poet.` },
         { role: "user", content: `Today's date is ${dateString}. 
                 Please write a short poem using this information and limit your response to 4 lines. 
-                Additionally, try not to use the full date in the poem.`
+                Additionally, try not to use the full date in the poem. Please use common meter.`
         }
     ];
 
