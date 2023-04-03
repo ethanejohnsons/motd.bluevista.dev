@@ -1,8 +1,7 @@
 body {
     padding: 50px 0;
     background-color: #fdfff5;
-}
-.text {
+
     /* Alignment */
     text-align: center;
     margin: auto;
@@ -17,7 +16,20 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.footer {
+body a {
+    width: 50px;
+    height: 50px;
+}
+svg {
+    fill: #aaaaaa;
+}
+.footer-left {
+    bottom: 1rem;
+    left: 1rem;
+    position: fixed;
+    display: flex;
+}
+.footer-right {
     bottom: 1rem;
     right: 1rem;
     position: fixed;
@@ -30,4 +42,20 @@ hr {
     border: none;
     opacity: 1.0;
     background-color: #222222;
+}
+
+/* Dark Mode */
+.body-dark {
+    background-color: #111111;
+    color: #dddddd;
+    fill: currentColor;
+}
+.hr-dark {
+    background-color: #dddddd;
+}
+.svg-dark {
+    fill: #dddddd;
+}
+.hidden {
+    display: none;
 }
